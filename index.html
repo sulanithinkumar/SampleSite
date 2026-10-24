@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1e293b;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #38bdf8;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .about {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 30px;
+            text-align: center;
+            background-color: #1e293b;
+            border-radius: 12px;
+        }
+
+        .about h2 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            margin-bottom: 15px;
+        }
+
+        .skills {
+            margin-top: 25px;
+        }
+
+        .skills span {
+            display: inline-block;
+            background-color: #334155;
+            padding: 8px 14px;
+            margin: 5px;
+            border-radius: 20px;
+        }
+
+        .contact {
+            margin-top: 25px;
+        }
+
+        .contact a {
+            display: inline-block;
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="about" id="about">
+        <h2>About Me</h2>
+
+        <p>
+            Hello! I am a cybersecurity enthusiast aspiring to become
+            a SOC Analyst. I am passionate about network security,
+            threat detection, and incident response.
+        </p>
+
+        <p>
+            I practice cybersecurity through hands-on labs on
+            TryHackMe and continuously improve my technical skills.
+            My goal is to identify security threats and help
+            organizations protect their systems.
+        </p>
+
+        <div class="skills" id="skills">
+            <h2>My Technical Skills</h2>
+
+            <span>Networking</span>
+            <span>Linux</span>
+            <span>SIEM</span>
+            <span>Splunk</span>
+            <span>Wireshark</span>
+            <span>Nmap</span>
+            <span>TryHackMe</span>
+        </div>
+
+        <div class="contact" id="contact">
+            <h2>Contact Me</h2>
+
+            <p>Email: yourname@example.com</p>
+
+            <a href="https://www.linkedin.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Visit LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
