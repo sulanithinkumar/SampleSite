@@ -1,157 +1,219 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | My Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #667085;
+      --paper: #f8f7f3;
+      --accent: #5b63f2;
+      --card: #ffffff;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * { box-sizing: border-box; }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0f172a;
-            color: white;
-            line-height: 1.6;
-        }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
 
-        header {
-            background-color: #1e293b;
-            padding: 20px;
-            text-align: center;
-        }
+    .container {
+      width: min(960px, calc(100% - 40px));
+      margin: auto;
+    }
 
-        header h1 {
-            color: #38bdf8;
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+    }
 
-        nav {
-            margin-top: 10px;
-        }
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 12px;
-        }
+    nav a {
+      margin-left: 18px;
+      color: var(--muted);
+      text-decoration: none;
+    }
 
-        nav a:hover {
-            color: #38bdf8;
-        }
+    nav a:hover { color: var(--accent); }
 
-        .about {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 30px;
-            text-align: center;
-            background-color: #1e293b;
-            border-radius: 12px;
-        }
+    .hero {
+      min-height: 70vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 70px 0;
+    }
 
-        .about h2 {
-            color: #38bdf8;
-            margin-bottom: 15px;
-        }
+    .hero h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+    }
 
-        .about p {
-            margin-bottom: 15px;
-        }
+    .hero h1 span { color: var(--accent); }
 
-        .skills {
-            margin-top: 25px;
-        }
+    .hero p {
+      max-width: 580px;
+      margin: 28px auto;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
 
-        .skills span {
-            display: inline-block;
-            background-color: #334155;
-            padding: 8px 14px;
-            margin: 5px;
-            border-radius: 20px;
-        }
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-        .contact {
-            margin-top: 25px;
-        }
+    section { padding: 80px 0; }
 
-        .contact a {
-            display: inline-block;
-            background-color: #38bdf8;
-            color: #0f172a;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: -0.05em;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #94a3b8;
-        }
-    </style>
+    .intro {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: 18px;
+      background: var(--card);
+      box-shadow: 0 12px 35px rgba(23, 32, 51, 0.07);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      padding: 56px;
+      border-radius: 28px;
+      color: white;
+      background: linear-gradient(135deg, #5b63f2, #a56cff);
+      text-align: center;
+    }
+
+    .contact h2 { margin-bottom: 12px; }
+
+    .contact .button {
+      margin-top: 14px;
+      color: var(--ink);
+      background: white;
+    }
+
+    footer {
+      padding: 32px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      nav { display: none; }
+      .cards { grid-template-columns: 1fr; }
+      .contact { padding: 36px 24px; }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="container">
+    <div class="logo">Sula Nithin kumar</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#now">Now</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <header>
-        <h1>My Portfolio</h1>
-
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <section class="about" id="about">
-        <h2>About Me</h2>
-
+  <main>
+    <section class="hero container">
+      <div>
+        <h1>Hi, I’m <span>Sula Nithin kumar</span>.</h1>
         <p>
-            Hello! I am a cybersecurity enthusiast aspiring to become
-            a SOC Analyst. I am passionate about network security,
-            threat detection, and incident response.
+          I’m creating my personal corner of the web with Codex.
+          This is a simple place to share what I’m building and learning.
         </p>
-
-        <p>
-            I practice cybersecurity through hands-on labs on
-            TryHackMe and continuously improve my technical skills.
-            My goal is to identify security threats and help
-            organizations protect their systems.
-        </p>
-
-        <div class="skills" id="skills">
-            <h2>My Technical Skills</h2>
-
-            <span>Networking</span>
-            <span>Linux</span>
-            <span>SIEM</span>
-            <span>Splunk</span>
-            <span>Wireshark</span>
-            <span>Nmap</span>
-            <span>TryHackMe</span>
-        </div>
-
-        <div class="contact" id="contact">
-            <h2>Contact Me</h2>
-
-            <p>Email: yourname@example.com</p>
-
-            <a href="https://www.linkedin.com/"
-               target="_blank"
-               rel="noopener noreferrer">
-                Visit LinkedIn
-            </a>
-        </div>
+        <a class="button" href="#about">About me ↓</a>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
-    </footer>
+    <section id="about" class="container">
+      <h2>A little about me.</h2>
+      <p class="intro">
+        I’m starting with a simple website and making it my own over time.
+        Right now, this page is a small introduction—and a place for future
+        projects, ideas, and updates.
+      </p>
+    </section>
 
+    <section id="now" class="container">
+      <h2>Right now.</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Building</h3>
+          <p>Creating my first personal website.</p>
+        </article>
+
+        <article class="card">
+          <h3>Learning</h3>
+          <p>Exploring how to turn ideas into useful things.</p>
+        </article>
+
+        <article class="card">
+          <h3>Next</h3>
+          <p>Adding my own work, interests, and story here.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <div class="contact">
+        <h2>Let’s connect.</h2>
+        <p>sulanithinkumar@gmail.com</p>
+        <a class="button" href="mailto:sulanithinkumar@gmail.com">Say hello ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Sula Nithin kumar. All rights reserved.
+  </footer>
 </body>
 </html>
